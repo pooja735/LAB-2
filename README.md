@@ -1,232 +1,287 @@
-# Cryptography & Number Theory Lab
+# 🔐 Cryptography & Number Theory Lab
 
-A comprehensive web application demonstrating advanced cryptographic algorithms and number theory concepts through interactive tools and visualizations.
+A professional full-stack web application for exploring cryptography and number theory concepts with interactive demonstrations, visualizations, and educational content.
 
-## 🚀 Features
+![Application Preview](https://img.shields.io/badge/Status-Live-brightgreen)
+![Node.js](https://img.shields.io/badge/Node.js-18+-green)
+![React](https://img.shields.io/badge/React-18+-blue)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green)
 
-### Cryptographic Algorithms
-- **RSA Encryption/Decryption**: Generate key pairs, encrypt/decrypt messages
-- **Hash Functions**: SHA-256, SHA-512, MD5 with collision analysis
-- **Elliptic Curve Cryptography**: Point operations and curve visualization
+## ✨ Features
 
-### Number Theory Tools
-- **Prime Number Generation**: Cryptographically secure prime generation
-- **Prime Testing**: Miller-Rabin primality testing with factorization
-- **Modular Arithmetic**: Exponentiation, multiplicative inverse, GCD calculations
-- **Extended Euclidean Algorithm**: Bézout coefficients calculation
+### 🏠 **Home Page**
+- Interactive overview of cryptography and number theory
+- Professional navigation to all modules
+- Application statistics and feature highlights
 
-### Interactive Visualizations
-- **RSA Key Size Analysis**: Security level comparisons
-- **Prime Distribution Charts**: Visual prime number distribution
-- **Modular Power Cycles**: Periodicity visualization
-- **Hash Collision Analysis**: Birthday paradox demonstrations
-- **Elliptic Curve Plots**: Interactive curve point visualization
+### 🔢 **Prime Numbers & Modular Arithmetic**
+- **Prime Number Operations:**
+  - Prime checking with Miller-Rabin algorithm
+  - Next prime number generation
+  - Prime factorization
+  - Modular inverse calculation
+- **Interactive Visualizations:**
+  - Modular arithmetic tables
+  - Number wheel (mod 7 circle showing remainders)
+  - Real-time calculations
 
-### Additional Features
-- **Operation History**: Track all cryptographic operations
-- **Responsive Design**: Works on desktop, tablet, and mobile
-- **Real-time Calculations**: Instant results with loading indicators
-- **Copy to Clipboard**: Easy data sharing and reuse
+### 🔐 **Cipher Demonstration**
+- **Three Cipher Types:**
+  - **Caesar Cipher:** Simple substitution with shift
+  - **Affine Cipher:** Linear transformation (ax + b) mod 26
+  - **RSA Encryption:** Public-key cryptography
+- **Dual Functionality:**
+  - **Encryption Engine:** Encrypt plaintext with keys
+  - **Decryption Engine:** Decrypt ciphertext with keys
+- **Advanced Features:**
+  - Character shift animations
+  - Letter frequency analysis (before & after encryption)
+  - Verification system for decryption accuracy
+  - Professional status badges and feedback
+
+### 🗝️ **RSA Key Generation**
+- Step-by-step RSA key generation process
+- Mathematical explanations with formulas
+- Interactive flowcharts and diagrams
+- Animated encryption/decryption demonstrations
+- Key pair generation and management
+
+### 📚 **History & Educational Info**
+- **Number Theory Concepts:**
+  - Greatest Common Divisor (GCD) calculation
+  - Extended Euclidean Algorithm
+  - Euler's totient function
+  - Modular arithmetic principles
+- **Interactive Examples:**
+  - React math cards with explanations
+  - Real-time calculations
+  - Educational content and tutorials
+
+## 🎨 Professional UI Design
+
+- **Dark Theme:** GitHub-inspired professional appearance
+- **Monospace Typography:** Developer-focused fonts (SF Mono, Monaco)
+- **Modern Components:** Gradient buttons, status badges, code blocks
+- **Responsive Design:** Works perfectly on all screen sizes
+- **Interactive Elements:** Hover effects, smooth transitions, visual feedback
 
 ## 🛠️ Technology Stack
 
-### Backend
-- **Node.js** with Express.js
-- **MongoDB** for data persistence
-- **Big Integer** library for large number calculations
-- **Node-RSA** for RSA operations
-- **Crypto** module for hash functions
+### **Frontend**
+- **React 18** - Modern UI framework
+- **Styled Components** - CSS-in-JS styling
+- **React Router** - Client-side routing
+- **Chart.js** - Data visualizations
+- **Axios** - HTTP client for API calls
 
-### Frontend
-- **React.js** with modern hooks
-- **React Router** for navigation
-- **Chart.js** with React-ChartJS-2 for visualizations
-- **Styled Components** for responsive styling
-- **Axios** for API communication
+### **Backend**
+- **Node.js** - Server runtime
+- **Express.js** - Web framework
+- **MongoDB** - Database (Atlas cloud)
+- **Mongoose** - MongoDB object modeling
+- **CORS** - Cross-origin resource sharing
 
-## 📋 Prerequisites
+### **Cryptography Libraries**
+- **node-rsa** - RSA encryption/decryption
+- **big-integer** - Large number arithmetic
+- **crypto** - Built-in Node.js crypto module
+- **bcryptjs** - Password hashing
 
-- Node.js (v14 or higher)
-- MongoDB (v4.4 or higher)
-- npm or yarn package manager
+## 🚀 Quick Start
 
-## 🚀 Installation & Setup
+### Prerequisites
+- Node.js 18+ installed
+- MongoDB Atlas account (or local MongoDB)
 
-### 1. Clone the Repository
-```bash
-git clone <repository-url>
-cd cryptography-lab
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd cryptography-lab
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   cd client && npm install && cd ..
+   ```
+
+3. **Configure MongoDB**
+   - The application is pre-configured with MongoDB Atlas
+   - Connection string is hardcoded in `server.js`
+   - No additional setup required
+
+4. **Start the application**
+   ```bash
+   npm run dev
+   ```
+
+5. **Access the application**
+   - Frontend: http://localhost:3000
+   - Backend API: http://localhost:5000
+
+## 📁 Project Structure
+
+```
+cryptography-lab/
+├── client/                 # React frontend
+│   ├── public/
+│   ├── src/
+│   │   ├── components/     # Reusable components
+│   │   ├── pages/          # Main application pages
+│   │   ├── utils/          # Utility functions
+│   │   └── index.js        # React entry point
+│   └── package.json
+├── routes/                 # Express API routes
+│   ├── crypto.js          # Cryptographic operations
+│   ├── numberTheory.js    # Number theory functions
+│   └── visualization.js   # Data visualization endpoints
+├── models/                 # MongoDB schemas
+│   └── EncryptionHistory.js
+├── server.js              # Express server
+├── package.json           # Backend dependencies
+└── README.md
 ```
 
-### 2. Install Backend Dependencies
+## 🔧 API Endpoints
+
+### **Cryptography Routes** (`/api/crypto`)
+- `POST /rsa/encrypt` - RSA encryption
+- `POST /rsa/decrypt` - RSA decryption
+- `POST /hash` - Hash functions (SHA-256, SHA-512, MD5)
+- `GET /history` - Encryption history
+
+### **Number Theory Routes** (`/api/number-theory`)
+- `POST /prime/generate` - Generate prime numbers
+- `POST /prime/check` - Check if number is prime
+- `POST /modular/power` - Modular exponentiation
+- `POST /modular/inverse` - Modular inverse
+- `POST /gcd` - Greatest Common Divisor
+
+### **Visualization Routes** (`/api/visualization`)
+- `GET /rsa-sizes` - RSA key size data
+- `GET /prime-distribution` - Prime number distribution
+- `GET /modular-cycles` - Modular arithmetic cycles
+
+## 🎯 Usage Examples
+
+### **Caesar Cipher**
+1. Select "Caesar Cipher" from dropdown
+2. Enter plaintext: "Hello World"
+3. Enter shift key: "3"
+4. Click "Encrypt Text"
+5. Copy encrypted result and key
+6. Use decryption section to verify
+
+### **RSA Encryption**
+1. Select "RSA Cipher" from dropdown
+2. Enter plaintext: "Secret Message"
+3. Click "Encrypt Text" (key generated automatically)
+4. Copy encrypted result and private key
+5. Use decryption section with private key
+
+### **GCD Calculation**
+1. Go to "History & Info" page
+2. Enter two numbers: 48 and 18
+3. Click "Calculate GCD"
+4. View result: GCD(48, 18) = 6
+
+## 🔒 Security Features
+
+- **Input Validation:** All inputs are validated and sanitized
+- **Error Handling:** Comprehensive error handling and user feedback
+- **Secure Key Generation:** Cryptographically secure random number generation
+- **Database Security:** MongoDB Atlas with secure connection strings
+
+## 🎨 UI/UX Features
+
+- **Professional Design:** GitHub-inspired dark theme
+- **Status Indicators:** Color-coded badges for success/error states
+- **Code Syntax Highlighting:** Professional algorithm explanations
+- **Interactive Visualizations:** Real-time charts and animations
+- **Responsive Layout:** Mobile-friendly design
+- **Loading States:** Professional loading spinners and feedback
+
+## 🧪 Testing
+
+### **Manual Testing**
+1. Test all cipher types (Caesar, Affine, RSA)
+2. Verify encryption/decryption accuracy
+3. Test GCD calculations
+4. Check responsive design on different screen sizes
+
+### **API Testing**
 ```bash
-npm install
+# Test GCD endpoint
+curl -X POST http://localhost:5000/api/number-theory/gcd \
+  -H "Content-Type: application/json" \
+  -d '{"a":48,"b":18}'
+
+# Test RSA encryption
+curl -X POST http://localhost:5000/api/crypto/rsa/encrypt \
+  -H "Content-Type: application/json" \
+  -d '{"message":"Hello World"}'
 ```
 
-### 3. Install Frontend Dependencies
+## 🚀 Deployment
+
+### **Production Build**
 ```bash
-cd client
-npm install
-cd ..
-```
-
-### 4. Start MongoDB
-Make sure MongoDB is running on your system:
-```bash
-# On Windows
-net start MongoDB
-
-# On macOS/Linux
-sudo systemctl start mongod
-# or
-brew services start mongodb-community
-```
-
-### 5. Run the Application
-
-#### Development Mode (Recommended)
-```bash
-npm run dev
-```
-This will start both the backend server (port 5000) and frontend development server (port 3000) concurrently.
-
-#### Production Mode
-```bash
-# Build the frontend
 npm run build
-
-# Start the server
-npm start
 ```
 
-### 6. Access the Application
-Open your browser and navigate to:
-- **Development**: http://localhost:3000
-- **Production**: http://localhost:5000
+### **Environment Variables**
+- MongoDB connection string is hardcoded
+- No additional environment setup required
 
-## 📖 Usage Guide
+## 📊 Performance
 
-### RSA Encryption
-1. Navigate to the RSA page
-2. Generate a key pair
-3. Enter a message to encrypt
-4. Use the public key for encryption
-5. Use the private key for decryption
-
-### Number Theory Calculator
-1. Go to the Number Theory page
-2. Generate prime numbers of specified bit length
-3. Test numbers for primality
-4. Perform modular arithmetic operations
-5. Calculate GCD and modular inverses
-
-### Hash Functions
-1. Visit the Hash Functions page
-2. Enter text to hash
-3. Select algorithm (SHA-256, SHA-512, MD5)
-4. Compare hash outputs across algorithms
-
-### Elliptic Curves
-1. Access the Elliptic Curves page
-2. Set curve parameters (a, b, p)
-3. Generate curve points
-4. Visualize the elliptic curve
-5. Perform point addition operations
-
-### Visualizations
-1. Go to the Visualizations page
-2. View interactive charts and graphs
-3. Analyze cryptographic relationships
-4. Understand mathematical concepts visually
-
-### Operation History
-1. Check the History page
-2. View all performed operations
-3. Filter by algorithm or operation type
-4. Copy data for reuse
-
-## 🔧 Configuration
-
-### Environment Variables
-Create a `.env` file in the root directory:
-```env
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/cryptography-lab
-NODE_ENV=development
-```
-
-### MongoDB Configuration
-The application connects to MongoDB at `mongodb://localhost:27017/cryptography-lab` by default. Modify the connection string in `server.js` if needed.
-
-## 📚 Mathematical Concepts Covered
-
-### Cryptography
-- **RSA Algorithm**: Public-key cryptosystem based on integer factorization
-- **Hash Functions**: One-way functions for data integrity
-- **Elliptic Curves**: Public-key cryptography based on elliptic curve discrete logarithm
-
-### Number Theory
-- **Prime Numbers**: Fundamental building blocks of cryptography
-- **Modular Arithmetic**: Operations in finite fields
-- **Greatest Common Divisor**: Euclidean algorithm and extensions
-- **Modular Exponentiation**: Efficient computation of large powers
-
-### Security Concepts
-- **Key Sizes**: Relationship between key length and security
-- **Collision Resistance**: Hash function security properties
-- **Cryptographic Strength**: Comparing different algorithms
-
-## 🎯 Educational Value
-
-This application is designed for:
-- **Computer Science Students**: Understanding cryptographic algorithms
-- **Mathematics Students**: Exploring number theory applications
-- **Security Professionals**: Learning about cryptographic implementations
-- **General Learners**: Interactive exploration of mathematical concepts
-
-## 🔒 Security Considerations
-
-- **Educational Purpose**: This application is for learning and demonstration
-- **Not Production Ready**: Do not use for actual cryptographic operations
-- **Key Management**: Generated keys are for demonstration only
-- **Hash Security**: MD5 is included for educational purposes but is cryptographically broken
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-1. **MongoDB Connection Error**
-   - Ensure MongoDB is running
-   - Check connection string in `server.js`
-   - Verify MongoDB is accessible on port 27017
-
-2. **Port Already in Use**
-   - Change the port in `server.js`
-   - Kill existing processes on the port
-   - Use `npm run dev` for automatic port management
-
-3. **Frontend Build Errors**
-   - Clear node_modules and reinstall: `rm -rf node_modules && npm install`
-   - Check Node.js version compatibility
-   - Ensure all dependencies are installed
-
-4. **Large Number Calculations**
-   - Some operations may take time for very large numbers
-   - Use reasonable bit lengths for demonstrations
-   - Consider browser limitations for client-side calculations
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+- **Frontend:** Optimized React components with lazy loading
+- **Backend:** Efficient algorithms for cryptographic operations
+- **Database:** MongoDB Atlas for scalable data storage
+- **Caching:** Client-side caching for better performance
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🎓 Educational Value
+
+This application serves as an excellent learning tool for:
+- **Computer Science Students:** Understanding cryptographic algorithms
+- **Mathematics Students:** Exploring number theory concepts
+- **Security Professionals:** Hands-on experience with encryption
+- **Developers:** Full-stack development with modern technologies
+
+## 🔮 Future Enhancements
+
+- [ ] Elliptic Curve Cryptography
+- [ ] Advanced hash functions (SHA-3, BLAKE2)
+- [ ] Digital signatures
+- [ ] Key exchange protocols
+- [ ] Performance benchmarking
+- [ ] User authentication system
+- [ ] Advanced visualizations
+- [ ] Mobile app version
 
 ## 📞 Support
 
-For support or questions, please open an issue in the repository.
+For questions, issues, or contributions, please:
+1. Check the existing issues
+2. Create a new issue with detailed description
+3. Contact the development team
 
 ---
 
-**Note**: This application is designed for educational purposes and demonstrates cryptographic concepts. It should not be used for production security applications without proper security review and hardening.
+**Built with ❤️ for the cryptography and mathematics community**
+
+*Professional-grade cryptographic tools for educational and research purposes*
